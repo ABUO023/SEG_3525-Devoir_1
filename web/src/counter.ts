@@ -1,5 +1,5 @@
 export function setupCounter(element: HTMLButtonElement) {
-  let counter = 0
+  let counter = 20
   const setCounter = (count: number) => {
     counter = count
     element.innerHTML = `Count is ${counter}`
