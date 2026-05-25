@@ -3,7 +3,7 @@
 ## Student Information
 
 - Name: Aditya Baindur
-- Student number: [add your student number here]
+- Student number: 300382718
 - Course: SEG3525
 - Report title: Portfolio Homepage Visual Communication Report
 
@@ -37,15 +37,25 @@ To refresh and align with course expectations, I reviewed:
 
 - Repository URL: [https://github.com/ABUO023/SEG_3525-Devoir_1](https://github.com/ABUO023/SEG_3525-Devoir_1)
 
+## Run Instructions (Local)
+
+```bash
+cd web
+npm i
+npm run dev
+```
+
+This starts the Vite dev server for the portfolio homepage.
+
 ## Visual Communication Design Choices
 
 ### a) Colors
 
-I used a white monochrome palette (near-white backgrounds, off-black text, neutral gray borders) to create a focused and professional tone. Instead of accent-heavy color coding, emphasis comes from contrast shifts between sections and cards. This supports readability while keeping the interface aligned with a restrained, engineering-first identity.
+I used a light monochrome palette: white backgrounds, black text, and gray separators. I intentionally avoided bright accent colors so the page feels clean and focused. Most of the emphasis comes from black borders, section dividers, and typographic contrast.
 
 ### b) Typography
 
-I used a serif-forward typographic system with Playfair Display for major headings and Source Serif 4 for body copy. The serif treatment gives the page an editorial character and helps headlines carry more authority. I used a monospace face for labels and metadata-style text to create a clear distinction between structural labels and narrative content.
+I used Playfair Display for major headings and Source Serif 4 for body text. This gave the page a more editorial look while keeping long paragraphs readable. I used JetBrains Mono for smaller labels/buttons to separate utility text from content text.
 
 ### c) Layout (Scale, Hierarchy, Balance, Contrast)
 
@@ -54,6 +64,6 @@ The layout is built around a strong vertical rhythm and clear section blocks:
 - **Scale:** The hero title is intentionally oversized so the page purpose is obvious immediately.
 - **Visual hierarchy:** Section titles, body text, and small labels each have distinct size, weight, and spacing patterns.
 - **Balance:** A two-column structure in key sections balances dense explanatory text with open negative space.
-- **Contrast:** Contrast is created through light-on-dark typography, bordered cards, and alternating surface depth (base background vs elevated blocks).
+- **Contrast:** Contrast is created through black-on-white typography, heavy section lines, and bordered cards.
 
-These choices were made to communicate confidence and clarity while keeping the portfolio readable on both desktop and mobile.
+Overall, I wanted the page to feel direct and readable first, while still looking like a personal portfolio and not a generic template.
