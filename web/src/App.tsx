@@ -71,7 +71,7 @@ const projects = [
 function HomePage() {
   return (
     <main>
-      <header className="hero-shell border-bottom border-white border-opacity-25">
+      <header className="hero-shell">
         <div className="container py-5 py-lg-6">
           <img src={mainLogo} alt="Aditya Baindur logo" className="hero-logo mb-4" />
           <p className="eyebrow mb-3">Aditya Baindur • Software Developer</p>
@@ -82,10 +82,10 @@ function HomePage() {
             systems, and cloud tooling to ship practical products that scale.
           </p>
           <div className="d-flex flex-wrap gap-2">
-            <a className="btn btn-outline-light btn-sm px-3 mono-btn" href="https://docs.adityabaindur.com">
+            <a className="btn btn-outline-dark btn-sm px-3 mono-btn" href="https://docs.adityabaindur.com">
               Read Project Docs
             </a>
-            <a className="btn btn-light btn-sm px-3 mono-btn" href="https://github.com/ABUO023/SEG_3525-Devoir_1">
+            <a className="btn btn-dark btn-sm px-3 mono-btn" href="https://github.com/ABUO023/SEG_3525-Devoir_1">
               View Repository
             </a>
           </div>
@@ -159,7 +159,7 @@ function HomePage() {
                   <p className="study-domain mb-1">{study.domain}</p>
                   <h3 className="study-title">{study.title}</h3>
                   <p className="study-copy mb-3">{study.detail}</p>
-                  <Link className="btn btn-outline-light btn-sm mono-btn" to={`/coming-soon/${study.id}`}>
+                  <Link className="btn btn-outline-dark btn-sm mono-btn" to={`/coming-soon/${study.id}`}>
                     Open Coming Soon Page
                   </Link>
                 </div>
@@ -190,7 +190,7 @@ function ComingSoonPage() {
           {study.detail} This page is the required placeholder and will be expanded into a full
           case study with process breakdown, implementation choices, and final metrics.
         </p>
-        <Link className="btn btn-light btn-sm mono-btn" to="/">
+        <Link className="btn btn-dark btn-sm mono-btn" to="/">
           Back to Portfolio Home
         </Link>
       </div>
