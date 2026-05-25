@@ -12,39 +12,39 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
   {
     id: 'service-site',
-    title: 'PulseCare Studio',
+    title: 'Local Service Website',
     domain: 'Service Website',
     image:
       'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A service-led website concept for a modern dental and wellness studio focused on trust, booking clarity, and local search visibility.',
+      'I am building this for a local service business (dentist / bike repair / salon type). Main goal is super simple: easy booking + contact details you cant miss.',
   },
   {
     id: 'triviaup-memory-game',
-    title: 'Trivia UP: Memory Sprint',
+    title: 'Trivia UP Memory Mode',
     domain: 'Memory Game',
     image:
       'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A game variation of Trivia UP that adds memory rounds, speed scoring, and category streaks to keep the session social and competitive.',
+      'I am building this as a Trivia UP memory-game direction. Fast rounds, clean UI, and score tracking so it stays competitive but still fun.',
   },
   {
     id: 'ecommerce-site',
-    title: 'Northline Supply',
+    title: 'E-Commerce Storefront',
     domain: 'E-Commerce',
     image:
       'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A product-first online storefront with strong filtering, decisive product detail pages, and a checkout flow optimized for speed.',
+      'I am building this as an e-commerce flow with browse, filter, product page, then checkout. Biggest focus is reducing checkout friction.',
   },
   {
     id: 'analytics-visualization',
-    title: 'SignalBoard Analytics',
+    title: 'Analytics + Visualization Site',
     domain: 'Data Visualization',
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'An analysis dashboard concept that translates dense telemetry into clean stories for operations and business stakeholders.',
+      'I am building this as an analytics/visualization dashboard (BI/sport/finance style). There is a lot of data, but I want it readable at a glance.',
   },
 ]
 
@@ -52,19 +52,30 @@ const projects = [
   {
     title: 'CollabBoard',
     href: 'https://collabboard.dev',
-    summary: 'Realtime whiteboard for collaborative ideation and planning.',
+    summary: 'Real-time collaboration platform with almost zero signup friction.',
   },
   {
     title: 'Focusify',
     href: 'https://focusify.adityabaindur.dev',
     summary:
-      'Pomodoro study helper built on Starknet and Cairo; winner at uOttawa Hack 6.',
+      'A pomodoro study helper built on Web3, Cairo, Etherium and the Starknet network - Winner UOttawa Hack 6.',
+  },
+  {
+    title: 'lnkshortner',
+    href: 'https://s.vicilabs.dev',
+    summary:
+      'A modern URL shortener on Cloudflare Workers where you choose the slug and control the domain.',
   },
   {
     title: 'R2-list',
     href: 'https://adityabaindur.dev/r2',
     summary:
-      'Cloudflare R2 object admin dashboard with analytics and workflow-driven UX.',
+      'Cloudflare R2 object admin dashboard with Analytics and a UI/UX first approach.',
+  },
+  {
+    title: 'QuickFind',
+    href: 'https://github.com/Aditya-Baindur/quickFind',
+    summary: 'Terminal utility for instant directory bookmarking and navigation in large codebases.',
   },
 ]
 
@@ -75,18 +86,17 @@ function HomePage() {
         <div className="container py-5 py-lg-6">
           <img src={mainLogo} alt="Aditya Baindur logo" className="hero-logo mb-4" />
           <p className="eyebrow mb-3">Aditya Baindur • Software Developer</p>
-          <h1 className="display-title mb-4">Build. Measure. Ship.</h1>
+          <h1 className="display-title mb-4">Build fast. Fix fast. Ship.</h1>
           <p className="hero-copy mb-4">
-            I am a 4th year Computer Science student at uOttawa and currently a Junior
-            Developer at uOttawa Central IT. My work blends platform thinking, frontend
-            systems, and cloud tooling to ship practical products that scale.
+            I am Aditya Baindur, a 4th year Computer Science Student @uOttawa. This summer,
+            I work @uOttawa Central IT as a Junior Developer.
           </p>
           <div className="d-flex flex-wrap gap-2">
             <a className="btn btn-outline-dark btn-sm px-3 mono-btn" href="https://docs.adityabaindur.com">
               Read Project Docs
             </a>
-            <a className="btn btn-dark btn-sm px-3 mono-btn" href="https://github.com/ABUO023/SEG_3525-Devoir_1">
-              View Repository
+            <a className="btn btn-dark btn-sm px-3 mono-btn" href="https://github.com/Aditya-Baindur">
+              View Github
             </a>
           </div>
         </div>
@@ -99,14 +109,13 @@ function HomePage() {
           </div>
           <div className="col-lg-8">
             <p className="section-copy">
-              I enjoy building software where product decisions and engineering tradeoffs are
-              visible. Most of my projects sit at the intersection of React-based interfaces,
-              API architecture, and infrastructure that stays predictable under load.
+              I design and build software systems and full-stack applications, with a focus on
+              platform and infrastructure tooling.
             </p>
             <p className="section-copy mb-0">
-              I am especially interested in edge-first delivery with Cloudflare services,
-              robust analytics instrumentation, and tooling that helps teams iterate without
-              losing quality.
+              Most of my projects have full docs at docs.adityabaindur.com. If you want the
+              complete breakdowns, architecture notes and implementation details, thats where it
+              all lives.
             </p>
           </div>
         </div>
@@ -116,22 +125,22 @@ function HomePage() {
         <div className="work-card p-4 p-lg-5">
           <h2 className="section-title mb-3">How You Work</h2>
           <p className="section-copy">
-            I work in short cycles with concrete metrics: identify the bottleneck, deliver a
-            thin version fast, instrument behavior, then refine. Across projects I have used
-            Next.js, Vite, Tailwind, shadcn/ui, Flask, Spring Boot, PostgreSQL, SQLite,
-            Docker, Kubernetes, and Helm.
+            I have worked with tech across the stack, from Next.js and Vite for frontend with
+            React, Tailwind CSS and shadcn/ui to Python Flask and Spring Boot, PostgreSQL,
+            SqlLite, while implementing globally scalable solutions with Helm, K8 and Docker.
           </p>
           <p className="section-copy mb-0">
-            A large part of my workflow is making products observable. I routinely wire in
-            telemetry, event logging, and performance monitoring so design decisions are based
-            on behavior, not guesswork.
+            I use Cloudflare products a lot, especially R2 and D1. I also care a lot about
+            analytics and user logging because that tells you if the product is actually
+            working. In general I work in quick itterations with clear KPI's to achive the
+            project's objective.
           </p>
         </div>
       </section>
 
       <section id="projects" className="container pb-5">
         <div className="d-flex justify-content-between align-items-end mb-3">
-          <h2 className="section-title mb-0">Recent Work</h2>
+          <h2 className="section-title mb-0">Projects</h2>
           <a className="small-link" href="https://docs.adityabaindur.com">
             docs.adityabaindur.com
           </a>
@@ -149,7 +158,7 @@ function HomePage() {
       </section>
 
       <section id="case-studies" className="container pb-5">
-        <h2 className="section-title mb-4">Case Study Placeholders</h2>
+        <h2 className="section-title mb-4">To Come</h2>
         <div className="row g-4">
           {caseStudies.map((study) => (
             <article key={study.id} className="col-md-6">
@@ -160,7 +169,7 @@ function HomePage() {
                   <h3 className="study-title">{study.title}</h3>
                   <p className="study-copy mb-3">{study.detail}</p>
                   <Link className="btn btn-outline-dark btn-sm mono-btn" to={`/coming-soon/${study.id}`}>
-                    Open Coming Soon Page
+                    View placeholder page
                   </Link>
                 </div>
               </div>
@@ -183,12 +192,12 @@ function ComingSoonPage() {
   return (
     <main className="container py-5">
       <div className="coming-shell p-4 p-lg-5">
-        <p className="eyebrow mb-2">Future Design</p>
+        <p className="eyebrow mb-2">A venir</p>
         <h1 className="section-title mb-3">{study.title}</h1>
         <p className="study-domain mb-3">{study.domain}</p>
         <p className="section-copy mb-4">
-          {study.detail} This page is the required placeholder and will be expanded into a full
-          case study with process breakdown, implementation choices, and final metrics.
+          {study.detail} For now this is the required coming soon placeholder page. Full case
+          study (process + build details) will be added once I build that project fully.
         </p>
         <Link className="btn btn-dark btn-sm mono-btn" to="/">
           Back to Portfolio Home

@@ -8,6 +8,12 @@
   --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --body: 'Source Serif 4', Georgia, serif;
   --mono: 'JetBrains Mono', monospace;
+  --space-1: 0.5rem;
+  --space-2: 0.9rem;
+  --space-3: 1.4rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
 }
 
 * {
@@ -63,19 +69,33 @@ body::after {
 }
 
 .py-lg-6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-5);
 }
 
 .hero-shell {
   background: #ffffff;
 }
 
+.container {
+  max-width: 1040px;
+}
+
+#about,
+#how-i-work,
+#projects,
+#case-studies {
+  padding-top: var(--space-5) !important;
+  padding-bottom: var(--space-5) !important;
+}
+
 .hero-logo {
   display: block;
-  max-width: min(520px, 100%);
+  max-width: min(280px, 72vw);
   width: 100%;
   height: auto;
+  border-radius: 0;
+  margin-bottom: var(--space-3) !important;
 }
 
 .eyebrow {
@@ -88,30 +108,32 @@ body::after {
 
 .display-title {
   font-family: var(--serif);
-  font-size: clamp(3.4rem, 11vw, 10rem);
+  font-size: clamp(2.8rem, 8vw, 7rem);
   line-height: 0.9;
   letter-spacing: -0.03em;
   max-width: 10ch;
   text-transform: uppercase;
+  margin-bottom: var(--space-3) !important;
 }
 
 .hero-copy,
 .section-copy,
 .study-copy {
   color: var(--text-muted);
-  font-size: clamp(1.04rem, 2vw, 1.2rem);
-  line-height: 1.7;
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.65;
+  margin-bottom: var(--space-2);
 }
 
 .section-copy + .section-copy {
-  margin-top: 1rem;
+  margin-top: var(--space-2);
 }
 
 .section-title {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 4vw, 3rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
@@ -124,7 +146,7 @@ body::after {
 }
 
 .project-card {
-  padding: 1rem;
+  padding: var(--space-3);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.2s ease, transform 0.2s ease;
@@ -136,7 +158,7 @@ body::after {
 
 .project-card h3,
 .study-title {
-  margin: 0 0 0.35rem;
+  margin: 0 0 var(--space-1);
   font-family: var(--serif);
   font-size: 1.45rem;
 }
@@ -166,6 +188,17 @@ body::after {
   object-fit: cover;
   display: block;
   filter: grayscale(0.5) contrast(1.2);
+}
+
+.study-card .p-3,
+.study-card .p-lg-4 {
+  padding: var(--space-3) !important;
+}
+
+.coming-shell {
+  max-width: 760px;
+  margin: var(--space-4) auto;
+  padding: var(--space-5) !important;
 }
 
 .study-domain {
@@ -203,5 +236,27 @@ body::after {
   .section-copy,
   .study-copy {
     line-height: 1.6;
+  }
+
+  .py-lg-6 {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-4);
+  }
+
+  #about,
+  #how-i-work,
+  #projects,
+  #case-studies {
+    padding-top: var(--space-4) !important;
+    padding-bottom: var(--space-4) !important;
+  }
+
+  .display-title {
+    max-width: 100%;
+  }
+
+  .coming-shell {
+    margin: var(--space-2) auto;
+    padding: var(--space-3) !important;
   }
 }

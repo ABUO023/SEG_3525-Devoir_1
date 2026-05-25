@@ -20,27 +20,28 @@ To refresh and align with course expectations, I reviewed:
 ## Portfolio Inspiration Links (Positive and Negative)
 
 1. https://millerding.com
+
    - Positive inspiration. I like the clarity and discipline of the layout. Content is easy to scan, hierarchy is obvious, and the visual language feels intentional rather than decorative.
-
 2. https://markchen.dev
-   - Negative inspiration. The site is technically impressive, but for my taste it has too many simultaneous interactions. It feels busy and can pull attention away from the core message.
 
+   - Negative inspiration. The site is technically impressive, but for my taste it has too many simultaneous interactions. It feels busy and can pull attention away from the core message.
 3. https://adityabaindur.com
+
    - Mixed inspiration. I like the clean aesthetic and minimal structure, but I wanted this assignment site to provide more descriptive context about process and project direction.
 
 ## Hosted Interface Link
 
-- Hosted URL: [add your live Vercel URL here]
+- Hosted URL: [d1.byaditya.com](https://d1.byaditya.com)
 
 ## Bootstrap/Source Repository Link
 
-- Repository URL: https://github.com/ABUO023/SEG_3525-Devoir_1
+- Repository URL: [https://github.com/ABUO023/SEG_3525-Devoir_1](https://github.com/ABUO023/SEG_3525-Devoir_1)
 
 ## Visual Communication Design Choices
 
 ### a) Colors
 
-I used a dark monochrome palette (near-black backgrounds, off-white text, neutral gray borders) to create a focused and professional tone. Instead of accent-heavy color coding, emphasis comes from contrast shifts between sections and cards. This supports readability while keeping the interface aligned with a restrained, engineering-first identity.
+I used a white monochrome palette (near-white backgrounds, off-black text, neutral gray borders) to create a focused and professional tone. Instead of accent-heavy color coding, emphasis comes from contrast shifts between sections and cards. This supports readability while keeping the interface aligned with a restrained, engineering-first identity.
 
 ### b) Typography
 
