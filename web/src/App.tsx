@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { HashRouter, Link, Navigate, Route, Routes, useParams } from 'react-router-dom'
 import mainLogo from '../../images/MainlogoFull.png'
 
@@ -7,17 +8,77 @@ type CaseStudy = {
   domain: string
   image: string
   detail: string
+  outcome: string
+  status: 'published' | 'coming-soon'
+  prototypeUrl?: string
+  mockupsUrl?: string
+  repoUrl?: string
+  personas?: Persona[]
+  visualDesign?: string[]
+}
+
+type Persona = {
+  name: string
+  characteristics: string
+  technology: string
+  domainRelationship: string
+  goal: string
+}
+
+type Project = {
+  title: string
+  href: string
+  category: string
+  summary: string
+}
+
+type EditorialButtonProps = {
+  children: ReactNode
+  href?: string
+  to?: string
+  onClick?: () => void
+  variant?: 'primary' | 'secondary' | 'link'
 }
 
 const caseStudies: CaseStudy[] = [
   {
-    id: 'service-site',
-    title: 'Local Service Website',
-    domain: 'Service Website',
+    id: 'velovite',
+    title: 'VéloVite',
+    domain: 'Urban Bike Repair Shop',
     image:
-      'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'I am building this for a local service business (dentist / bike repair / salon type). Main goal is super simple: easy booking + contact details you cant miss.',
+      'A high-fidelity service website for an urban bike repair shop, designed around emergency walk-ins, location clarity, and fast tune-up booking.',
+    outcome: 'Live prototype, mockups, personas, and service flow',
+    status: 'published',
+    prototypeUrl: 'https://d2.byaditya.com',
+    mockupsUrl: 'https://d2.byaditya.com/mockups',
+    repoUrl: 'https://github.com/ABUO023/SEG_3525-Devoir_2',
+    personas: [
+      {
+        name: 'Nahar',
+        characteristics: 'Student on a tight budget who uses her bike every day to get to college.',
+        technology: 'Mobile-first and uses social media recommendations to decide where to go.',
+        domainRelationship:
+          'Depends on her bike but does not know how to perform complex repairs herself.',
+        goal:
+          'Find opening hours, shop location, and whether emergency walk-ins are available without an appointment.',
+      },
+      {
+        name: 'Eric',
+        characteristics: 'Professional, passionate road cyclist, and detail-oriented service customer.',
+        technology: 'Expert user who prefers fast, accurate online booking instead of calling.',
+        domainRelationship:
+          'Knowledgeable about bike components and looking for high-quality repair expertise.',
+        goal: 'Schedule a complete tune-up appointment for his road bike.',
+      },
+    ],
+    visualDesign: [
+      'Industrial Clean theme using dark grays for reliability and vibrant orange for action.',
+      'Montserrat typography for a modern, robust service-brand tone.',
+      'Card-based service organization and a step-by-step booking flow to reduce cognitive load.',
+      'High text/background contrast so the repair and booking information stays accessible.',
+    ],
   },
   {
     id: 'triviaup-memory-game',
@@ -26,7 +87,9 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'I am building this as a Trivia UP memory-game direction. Fast rounds, clean UI, and score tracking so it stays competitive but still fun.',
+      'A memory-game direction for Trivia UP with fast rounds, clear scoring, and feedback that feels playful without becoming visually loud.',
+    outcome: 'Game loop, feedback, and scoring states',
+    status: 'coming-soon',
   },
   {
     id: 'ecommerce-site',
@@ -35,7 +98,9 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'I am building this as an e-commerce flow with browse, filter, product page, then checkout. Biggest focus is reducing checkout friction.',
+      'A storefront concept focused on browse, filtering, product detail, and checkout decisions with friction reduced at every step.',
+    outcome: 'Catalog browsing and checkout clarity',
+    status: 'coming-soon',
   },
   {
     id: 'analytics-visualization',
@@ -44,137 +109,449 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'I am building this as an analytics/visualization dashboard (BI/sport/finance style). There is a lot of data, but I want it readable at a glance.',
+      'A BI, sports, or finance dashboard where dense data is organized into readable signals, confident hierarchy, and glanceable comparisons.',
+    outcome: 'Dashboard hierarchy and data storytelling',
+    status: 'coming-soon',
   },
 ]
 
-const projects = [
+const projects: Project[] = [
   {
     title: 'CollabBoard',
     href: 'https://collabboard.dev',
+    category: 'Product',
     summary: 'Real-time collaboration platform with almost zero signup friction.',
   },
   {
     title: 'Focusify',
     href: 'https://focusify.adityabaindur.dev',
-    summary:
-      'A pomodoro study helper built on Web3, Cairo, Etherium and the Starknet network - Winner UOttawa Hack 6.',
+    category: 'Product',
+    summary: 'Pomodoro study helper built with Cairo on Starknet, and winner of uOttaHack 6.',
   },
   {
     title: 'lnkshortner',
     href: 'https://s.vicilabs.dev',
-    summary:
-      'A modern URL shortener on Cloudflare Workers where you choose the slug and control the domain.',
+    category: 'Edge app',
+    summary: 'Cloudflare Workers URL shortener with custom slugs and low-latency redirects.',
   },
   {
     title: 'R2-list',
     href: 'https://adityabaindur.dev/r2',
-    summary:
-      'Cloudflare R2 object admin dashboard with Analytics and a UI/UX first approach.',
+    category: 'Developer tool',
+    summary: 'Cloudflare R2 object admin dashboard with analytics and a UI/UX first approach.',
   },
   {
     title: 'QuickFind',
     href: 'https://github.com/Aditya-Baindur/quickFind',
+    category: 'CLI',
     summary: 'Terminal utility for instant directory bookmarking and navigation in large codebases.',
+  },
+  {
+    title: 'Trivia UP',
+    href: 'https://triviaup.adityabaindur.com',
+    category: 'Game',
+    summary: 'A Vite trivia game built around quick rounds and lightweight interaction patterns.',
   },
 ]
 
+const processSteps = [
+  {
+    title: 'Frame the outcome',
+    detail: 'Start with the user goal, the project KPI, and the smallest useful version worth testing.',
+  },
+  {
+    title: 'Build the real slice',
+    detail: 'Prototype with production-shaped tools instead of polishing throwaway screens.',
+  },
+  {
+    title: 'Instrument behavior',
+    detail: 'Use analytics, logs, and interaction signals to see where the product helps or fails.',
+  },
+  {
+    title: 'Iterate with restraint',
+    detail: 'Ship small, deliberate improvements until the interface feels obvious and reliable.',
+  },
+]
+
+const scrollToSection = (id: string) => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+const getCaseStudyPath = (study: CaseStudy) =>
+  study.status === 'published' ? `/case-study/${study.id}` : `/coming-soon/${study.id}`
+
+function EditorialChrome() {
+  return (
+    <>
+      <div className="paper-grain" aria-hidden="true" />
+      <div className="editorial-grid-lines" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+    </>
+  )
+}
+
+function EditorialButton({ children, href, to, onClick, variant = 'primary' }: EditorialButtonProps) {
+  const className = `editorial-button editorial-button--${variant}`
+  const content = (
+    <>
+      <span className="editorial-button__fill" aria-hidden="true" />
+      <span className="editorial-button__label">{children}</span>
+    </>
+  )
+
+  if (to) {
+    return (
+      <Link className={className} to={to}>
+        {content}
+      </Link>
+    )
+  }
+
+  if (href) {
+    return (
+      <a className={className} href={href}>
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <button className={className} type="button" onClick={onClick}>
+      {content}
+    </button>
+  )
+}
+
+function SectionHeader({ eyebrow, title }: { eyebrow: string; title: ReactNode }) {
+  return (
+    <div className="section-header">
+      <div className="section-rule" aria-hidden="true" />
+      <p className="overline">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+  )
+}
+
 function HomePage() {
   return (
-    <main>
-      <header className="hero-shell">
-        <div className="container py-5 py-lg-6">
-          <img src={mainLogo} alt="Aditya Baindur logo" className="hero-logo mb-4" />
-          <p className="eyebrow mb-3">Aditya Baindur • Software Developer</p>
-          <h1 className="display-title mb-4">Build fast. Fix fast. Ship.</h1>
-          <p className="hero-copy mb-4">
-            I am Aditya Baindur, a 4th year Computer Science Student @uOttawa. This summer,
-            I work @uOttawa Central IT as a Junior Developer.
-          </p>
-          <div className="d-flex flex-wrap gap-2">
-            <a className="btn btn-outline-dark btn-sm px-3 mono-btn" href="https://docs.adityabaindur.com">
-              Read Project Docs
-            </a>
-            <a className="btn btn-dark btn-sm px-3 mono-btn" href="https://github.com/Aditya-Baindur">
-              View Github
-            </a>
+    <main className="editorial-page">
+      <header className="hero-section" id="top">
+        <nav className="editorial-container editorial-nav" aria-label="Portfolio sections">
+          <Link className="logo-lockup" to="/" aria-label="Aditya Baindur portfolio home">
+            <img src={mainLogo} alt="Aditya Baindur logo" />
+          </Link>
+          <div className="nav-links" aria-label="Jump to required portfolio sections">
+            <button type="button" onClick={() => scrollToSection('about')}>
+              About
+            </button>
+            <button type="button" onClick={() => scrollToSection('how-i-work')}>
+              Process
+            </button>
+            <button type="button" onClick={() => scrollToSection('case-studies')}>
+              Case Studies
+            </button>
           </div>
-        </div>
+        </nav>
+
+        <section className="editorial-container hero-layout" aria-labelledby="hero-title">
+          <div className="hero-kicker">
+            <div className="section-rule" aria-hidden="true" />
+            <p className="overline">SEG3525 Portfolio / Vol. 01</p>
+          </div>
+
+          <div className="hero-title-block">
+            <h1 id="hero-title">
+              Full-stack systems with <em>editorial</em> precision.
+            </h1>
+            <p>
+              I am Aditya Baindur, a fourth-year Computer Science student at uOttawa and a
+              Junior Developer with uOttawa Central IT.
+            </p>
+            <div className="hero-actions">
+              <EditorialButton onClick={() => scrollToSection('case-studies')}>
+                Case studies
+              </EditorialButton>
+              <EditorialButton variant="secondary" href="https://github.com/Aditya-Baindur">
+                Github profile
+              </EditorialButton>
+            </div>
+          </div>
+
+          <aside className="hero-portrait" aria-label="Portfolio identity statement">
+            <span className="vertical-label">Computer Science / uOttawa</span>
+            <div className="hero-logo-frame">
+              <img src={mainLogo} alt="Aditya Baindur wordmark" />
+            </div>
+            <p>
+              Interfaces should feel composed before they feel impressive: clear hierarchy,
+              restrained motion, and enough structure that the work can speak first.
+            </p>
+          </aside>
+        </section>
       </header>
 
-      <section id="about" className="container py-5">
-        <div className="row g-4 align-items-start">
-          <div className="col-lg-4">
-            <h2 className="section-title">About You</h2>
+      <section className="editorial-section about-section" id="about">
+        <div className="editorial-container about-layout">
+          <SectionHeader
+            eyebrow="01 / Required Section"
+            title={
+              <>
+                About <em>You</em>
+              </>
+            }
+          />
+          <article className="about-copy">
+            <p className="drop-cap">
+              I design and build software systems, full-stack products, and developer tools with a
+              focus on platform and infrastructure work. I care about fast interfaces, reliable
+              foundations, and product decisions that users can understand quickly.
+            </p>
+            <p>
+              Most of my project breakdowns, architecture notes, and implementation details live at
+              docs.adityabaindur.com. This portfolio is the shorter front door: who I am, how I
+              work, and where the SEG3525 case studies live as they move from placeholders to
+              finished prototypes.
+            </p>
+          </article>
+          <aside className="about-index" aria-label="Current focus areas">
+            <p className="overline">Current Index</p>
+            <dl>
+              <div>
+                <dt>Role</dt>
+                <dd>Junior Developer, uOttawa Central IT</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>React, Vite, Cloudflare, platform tooling</dd>
+              </div>
+              <div>
+                <dt>Preference</dt>
+                <dd>Fast systems, quiet interfaces, measurable outcomes</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section className="editorial-section dark-section" id="how-i-work">
+        <div className="editorial-container process-layout">
+          <SectionHeader
+            eyebrow="02 / Required Section"
+            title={
+              <>
+                How <em>You</em> Work
+              </>
+            }
+          />
+          <div className="process-intro">
+            <p>
+              I work across the stack with React, Vite, Next.js, Flask, Spring Boot, PostgreSQL,
+              SQLite, Docker, Kubernetes, Helm, and Cloudflare products like R2 and D1.
+            </p>
           </div>
-          <div className="col-lg-8">
-            <p className="section-copy">
-              I design and build software systems and full-stack applications, with a focus on
-              platform and infrastructure tooling.
-            </p>
-            <p className="section-copy mb-0">
-              Most of my projects have full docs at docs.adityabaindur.com. If you want the
-              complete breakdowns, architecture notes and implementation details, thats where it
-              all lives.
-            </p>
+          <div className="process-list">
+            {processSteps.map((step, index) => (
+              <article key={step.title} className="process-item">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{step.title}</h3>
+                <p>{step.detail}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="how-i-work" className="container pb-5">
-        <div className="work-card p-4 p-lg-5">
-          <h2 className="section-title mb-3">How You Work</h2>
-          <p className="section-copy">
-            I have worked with tech across the stack, from Next.js and Vite for frontend with
-            React, Tailwind CSS and shadcn/ui to Python Flask and Spring Boot, PostgreSQL,
-            SqlLite, while implementing globally scalable solutions with Helm, K8 and Docker.
-          </p>
-          <p className="section-copy mb-0">
-            I use Cloudflare products a lot, especially R2 and D1. I also care a lot about
-            analytics and user logging because that tells you if the product is actually
-            working. In general I work in quick itterations with clear KPI's to achive the
-            project's objective.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects" className="container pb-5">
-        <div className="d-flex justify-content-between align-items-end mb-3">
-          <h2 className="section-title mb-0">Projects</h2>
-          <a className="small-link" href="https://docs.adityabaindur.com">
-            docs.adityabaindur.com
-          </a>
-        </div>
-        <div className="row g-3">
-          {projects.map((project) => (
-            <article key={project.title} className="col-md-6 col-lg-4">
-              <a className="project-card d-block h-100" href={project.href}>
+      <section className="editorial-section projects-section" id="projects">
+        <div className="editorial-container projects-layout">
+          <SectionHeader
+            eyebrow="Selected Work"
+            title={
+              <>
+                Shipped <em>Projects</em>
+              </>
+            }
+          />
+          <div className="project-list">
+            {projects.map((project) => (
+              <a key={project.title} className="project-row" href={project.href}>
+                <span>{project.category}</span>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
               </a>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="case-studies" className="container pb-5">
-        <h2 className="section-title mb-4">To Come</h2>
-        <div className="row g-4">
-          {caseStudies.map((study) => (
-            <article key={study.id} className="col-md-6">
-              <div className="study-card h-100">
-                <img src={study.image} className="study-image" alt={`${study.title} concept`} />
-                <div className="p-3 p-lg-4">
-                  <p className="study-domain mb-1">{study.domain}</p>
-                  <h3 className="study-title">{study.title}</h3>
-                  <p className="study-copy mb-3">{study.detail}</p>
-                  <Link className="btn btn-outline-dark btn-sm mono-btn" to={`/coming-soon/${study.id}`}>
-                    View placeholder page
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
+      <section className="editorial-section case-section" id="case-studies">
+        <div className="editorial-container case-layout">
+          <SectionHeader
+            eyebrow="03 / Required Section"
+            title={
+              <>
+                Case <em>Studies</em>
+              </>
+            }
+          />
+          <p className="case-intro">
+            The service website slot is now a published VéloVite case study linked to its
+            high-fidelity prototype. The remaining three slots stay as coming-soon placeholders for
+            future semester designs.
+          </p>
+          <div className="case-grid">
+            {caseStudies.map((study, index) => (
+              <article
+                key={study.id}
+                className={`case-card case-card--${study.status}`}
+              >
+                <Link to={getCaseStudyPath(study)} aria-label={`Open ${study.title} case study`}>
+                  <figure className="case-image-frame">
+                    <img src={study.image} alt={`${study.title} concept`} />
+                    <figcaption className="vertical-label">Design {index + 1}</figcaption>
+                  </figure>
+                  <div className="case-copy">
+                    <span>{study.domain}</span>
+                    <h3>{study.title}</h3>
+                    <p>{study.detail}</p>
+                    <strong>{study.outcome}</strong>
+                    <small>{study.status === 'published' ? 'Published case study' : 'Coming soon'}</small>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="editorial-footer">
+        <div className="editorial-container footer-layout">
+          <p>Aditya Baindur / SEG3525 Portfolio</p>
+          <a href="https://d1.byaditya.com">d1.byaditya.com</a>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+function PublishedCaseStudyPage() {
+  const { id } = useParams()
+  const study = caseStudies.find((item) => item.id === id)
+
+  if (id === 'service-site') {
+    return <Navigate to="/case-study/velovite" replace />
+  }
+
+  if (!study) {
+    return <Navigate to="/" replace />
+  }
+
+  if (study.status !== 'published') {
+    return <Navigate to={`/coming-soon/${study.id}`} replace />
+  }
+
+  return (
+    <main className="case-study-page">
+      <div className="editorial-container case-study-layout">
+        <Link className="back-link" to="/">
+          Portfolio home
+        </Link>
+
+        <section className="case-study-hero">
+          <div className="section-rule" aria-hidden="true" />
+          <p className="overline">Published Case Study / Devoir 2</p>
+          <h1>
+            {study.title} <em>Service Website</em>
+          </h1>
+          <p className="drop-cap">
+            {study.detail} The project connects this portfolio to a public high-fidelity prototype,
+            the mockups and storyboard materials, and the source repository so the TA can test the
+            interface without needing any additional coordination.
+          </p>
+          <div className="case-study-actions">
+            {study.prototypeUrl && <EditorialButton href={study.prototypeUrl}>Open prototype</EditorialButton>}
+            {study.mockupsUrl && (
+              <EditorialButton variant="secondary" href={study.mockupsUrl}>
+                View mockups
+              </EditorialButton>
+            )}
+            {study.repoUrl && (
+              <EditorialButton variant="secondary" href={study.repoUrl}>
+                Source code
+              </EditorialButton>
+            )}
+          </div>
+        </section>
+
+        <figure className="case-study-visual">
+          <span className="vertical-label">High-Fidelity Prototype</span>
+          <img src={study.image} alt={`${study.title} bike repair website concept`} />
+          <figcaption>
+            <span>{study.domain}</span>
+            <strong>{study.outcome}</strong>
+          </figcaption>
+        </figure>
+      </div>
+
+      <section className="editorial-section case-study-section">
+        <div className="editorial-container case-study-content-grid">
+          <SectionHeader
+            eyebrow="Personas"
+            title={
+              <>
+                Designed for <em>two riders</em>
+              </>
+            }
+          />
+          <div className="persona-list">
+            {study.personas?.map((persona) => (
+              <article key={persona.name} className="persona-card">
+                <h2>{persona.name}</h2>
+                <dl>
+                  <div>
+                    <dt>Characteristics</dt>
+                    <dd>{persona.characteristics}</dd>
+                  </div>
+                  <div>
+                    <dt>Technology</dt>
+                    <dd>{persona.technology}</dd>
+                  </div>
+                  <div>
+                    <dt>Domain Relationship</dt>
+                    <dd>{persona.domainRelationship}</dd>
+                  </div>
+                  <div>
+                    <dt>Goal</dt>
+                    <dd>{persona.goal}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="editorial-section dark-section case-study-section">
+        <div className="editorial-container case-study-content-grid">
+          <SectionHeader
+            eyebrow="Design Direction"
+            title={
+              <>
+                Industrial <em>Clean</em>
+              </>
+            }
+          />
+          <div className="design-note-list">
+            {study.visualDesign?.map((item, index) => (
+              <article key={item} className="design-note">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </main>
@@ -185,23 +562,48 @@ function ComingSoonPage() {
   const { id } = useParams()
   const study = caseStudies.find((item) => item.id === id)
 
+  if (id === 'service-site') {
+    return <Navigate to="/case-study/velovite" replace />
+  }
+
   if (!study) {
     return <Navigate to="/" replace />
   }
 
+  if (study.status === 'published') {
+    return <Navigate to={`/case-study/${study.id}`} replace />
+  }
+
   return (
-    <main className="container py-5">
-      <div className="coming-shell p-4 p-lg-5">
-        <p className="eyebrow mb-2">A venir</p>
-        <h1 className="section-title mb-3">{study.title}</h1>
-        <p className="study-domain mb-3">{study.domain}</p>
-        <p className="section-copy mb-4">
-          {study.detail} For now this is the required coming soon placeholder page. Full case
-          study (process + build details) will be added once I build that project fully.
-        </p>
-        <Link className="btn btn-dark btn-sm mono-btn" to="/">
-          Back to Portfolio Home
+    <main className="coming-page">
+      <div className="editorial-container coming-layout">
+        <Link className="back-link" to="/">
+          Portfolio home
         </Link>
+
+        <section className="coming-copy-panel">
+          <div className="section-rule" aria-hidden="true" />
+          <p className="overline">Coming Soon Placeholder</p>
+          <h1>
+            {study.title.split(' ').slice(0, -1).join(' ')} <em>{study.title.split(' ').at(-1)}</em>
+          </h1>
+          <p className="study-domain">{study.domain}</p>
+          <p className="drop-cap">
+            {study.detail} This is the required assignment placeholder page for the future case
+            study. The completed version will add research notes, visual decisions, prototype
+            screens, and implementation details once that design is built.
+          </p>
+          <EditorialButton to="/">Return home</EditorialButton>
+        </section>
+
+        <figure className="coming-visual">
+          <span className="vertical-label">Planned Focus</span>
+          <img src={study.image} alt={`${study.title} concept preview`} />
+          <figcaption>
+            <span>{study.domain}</span>
+            <strong>{study.outcome}</strong>
+          </figcaption>
+        </figure>
       </div>
     </main>
   )
@@ -211,8 +613,10 @@ function App() {
   return (
     <HashRouter>
       <div className="app-shell">
+        <EditorialChrome />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/case-study/:id" element={<PublishedCaseStudyPage />} />
           <Route path="/coming-soon/:id" element={<ComingSoonPage />} />
         </Routes>
       </div>

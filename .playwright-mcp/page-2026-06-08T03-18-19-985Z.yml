@@ -1,0 +1,167 @@
+- main [ref=e4]:
+  - generic [ref=e5]:
+    - navigation "Portfolio sections" [ref=e6]:
+      - link "Aditya Baindur portfolio home" [ref=e7] [cursor=pointer]:
+        - /url: "#/"
+        - img "Aditya Baindur logo" [ref=e8]
+      - generic "Jump to required portfolio sections" [ref=e9]:
+        - button "About" [ref=e10] [cursor=pointer]
+        - button "Process" [ref=e11] [cursor=pointer]
+        - button "Case Studies" [ref=e12] [cursor=pointer]
+    - region "Full-stack systems with editorial precision." [ref=e13]:
+      - paragraph [ref=e16]: SEG3525 Portfolio / Vol. 01
+      - generic [ref=e17]:
+        - heading "Full-stack systems with editorial precision." [level=1] [ref=e18]:
+          - text: Full-stack systems with
+          - emphasis [ref=e19]: editorial
+          - text: precision.
+        - paragraph [ref=e20]: I am Aditya Baindur, a fourth-year Computer Science student at uOttawa and a Junior Developer with uOttawa Central IT.
+        - generic [ref=e21]:
+          - button "Future studies" [ref=e22] [cursor=pointer]:
+            - generic [ref=e24]: Future studies
+          - link "Github profile" [ref=e25] [cursor=pointer]:
+            - /url: https://github.com/Aditya-Baindur
+            - generic [ref=e27]: Github profile
+      - complementary "Portfolio identity statement" [ref=e28]:
+        - generic [ref=e29]: Computer Science / uOttawa
+        - img "Aditya Baindur wordmark" [ref=e31]
+        - paragraph [ref=e32]: "Interfaces should feel composed before they feel impressive: clear hierarchy, restrained motion, and enough structure that the work can speak first."
+  - generic [ref=e34]:
+    - generic [ref=e35]:
+      - paragraph [ref=e37]: 01 / Required Section
+      - heading "About You" [level=2] [ref=e38]:
+        - text: About
+        - emphasis [ref=e39]: You
+    - article [ref=e40]:
+      - paragraph [ref=e41]: I design and build software systems, full-stack products, and developer tools with a focus on platform and infrastructure work. I care about fast interfaces, reliable foundations, and product decisions that users can understand quickly.
+      - paragraph [ref=e42]: "Most of my project breakdowns, architecture notes, and implementation details live at docs.adityabaindur.com. This portfolio is the shorter front door: who I am, how I work, and where the four upcoming SEG3525 case studies will live."
+    - complementary "Current focus areas" [ref=e43]:
+      - paragraph [ref=e44]: Current Index
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - term [ref=e47]: Role
+          - definition [ref=e48]: Junior Developer, uOttawa Central IT
+        - generic [ref=e49]:
+          - term [ref=e50]: Focus
+          - definition [ref=e51]: React, Vite, Cloudflare, platform tooling
+        - generic [ref=e52]:
+          - term [ref=e53]: Preference
+          - definition [ref=e54]: Fast systems, quiet interfaces, measurable outcomes
+  - generic [ref=e56]:
+    - generic [ref=e57]:
+      - paragraph [ref=e59]: 02 / Required Section
+      - heading "How You Work" [level=2] [ref=e60]:
+        - text: How
+        - emphasis [ref=e61]: You
+        - text: Work
+    - paragraph [ref=e63]: I work across the stack with React, Vite, Next.js, Flask, Spring Boot, PostgreSQL, SQLite, Docker, Kubernetes, Helm, and Cloudflare products like R2 and D1.
+    - generic [ref=e64]:
+      - article [ref=e65]:
+        - text: "01"
+        - heading "Frame the outcome" [level=3] [ref=e66]
+        - paragraph [ref=e67]: Start with the user goal, the project KPI, and the smallest useful version worth testing.
+      - article [ref=e68]:
+        - text: "02"
+        - heading "Build the real slice" [level=3] [ref=e69]
+        - paragraph [ref=e70]: Prototype with production-shaped tools instead of polishing throwaway screens.
+      - article [ref=e71]:
+        - text: "03"
+        - heading "Instrument behavior" [level=3] [ref=e72]
+        - paragraph [ref=e73]: Use analytics, logs, and interaction signals to see where the product helps or fails.
+      - article [ref=e74]:
+        - text: "04"
+        - heading "Iterate with restraint" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Ship small, deliberate improvements until the interface feels obvious and reliable.
+  - generic [ref=e78]:
+    - generic [ref=e79]:
+      - paragraph [ref=e81]: Selected Work
+      - heading "Shipped Projects" [level=2] [ref=e82]:
+        - text: Shipped
+        - emphasis [ref=e83]: Projects
+    - generic [ref=e84]:
+      - link "Product CollabBoard Real-time collaboration platform with almost zero signup friction." [ref=e85] [cursor=pointer]:
+        - /url: https://collabboard.dev
+        - generic [ref=e86]: Product
+        - heading "CollabBoard" [level=3] [ref=e87]
+        - paragraph [ref=e88]: Real-time collaboration platform with almost zero signup friction.
+      - link "Product Focusify Pomodoro study helper built with Cairo on Starknet, and winner of uOttaHack 6." [ref=e89] [cursor=pointer]:
+        - /url: https://focusify.adityabaindur.dev
+        - generic [ref=e90]: Product
+        - heading "Focusify" [level=3] [ref=e91]
+        - paragraph [ref=e92]: Pomodoro study helper built with Cairo on Starknet, and winner of uOttaHack 6.
+      - link "Edge app lnkshortner Cloudflare Workers URL shortener with custom slugs and low-latency redirects." [ref=e93] [cursor=pointer]:
+        - /url: https://s.vicilabs.dev
+        - generic [ref=e94]: Edge app
+        - heading "lnkshortner" [level=3] [ref=e95]
+        - paragraph [ref=e96]: Cloudflare Workers URL shortener with custom slugs and low-latency redirects.
+      - link "Developer tool R2-list Cloudflare R2 object admin dashboard with analytics and a UI/UX first approach." [ref=e97] [cursor=pointer]:
+        - /url: https://adityabaindur.dev/r2
+        - generic [ref=e98]: Developer tool
+        - heading "R2-list" [level=3] [ref=e99]
+        - paragraph [ref=e100]: Cloudflare R2 object admin dashboard with analytics and a UI/UX first approach.
+      - link "CLI QuickFind Terminal utility for instant directory bookmarking and navigation in large codebases." [ref=e101] [cursor=pointer]:
+        - /url: https://github.com/Aditya-Baindur/quickFind
+        - generic [ref=e102]: CLI
+        - heading "QuickFind" [level=3] [ref=e103]
+        - paragraph [ref=e104]: Terminal utility for instant directory bookmarking and navigation in large codebases.
+      - link "Game Trivia UP A Vite trivia game built around quick rounds and lightweight interaction patterns." [ref=e105] [cursor=pointer]:
+        - /url: https://triviaup.adityabaindur.com
+        - generic [ref=e106]: Game
+        - heading "Trivia UP" [level=3] [ref=e107]
+        - paragraph [ref=e108]: A Vite trivia game built around quick rounds and lightweight interaction patterns.
+  - generic [ref=e110]:
+    - generic [ref=e111]:
+      - paragraph [ref=e113]: 03 / Required Section
+      - heading "Future Case Studies" [level=2] [ref=e114]:
+        - text: Future
+        - emphasis [ref=e115]: Case Studies
+    - paragraph [ref=e116]: Four image-backed placeholders for the semester designs. Each links to a dedicated coming-soon page with a title and explanation, as required by the assignment.
+    - generic [ref=e117]:
+      - article [ref=e118]:
+        - link "Open Local Service Booking Site placeholder" [ref=e119] [cursor=pointer]:
+          - /url: "#/coming-soon/service-site"
+          - figure "Design 1" [ref=e120]:
+            - img "Local Service Booking Site concept" [ref=e121]
+            - generic [ref=e122]: Design 1
+          - generic [ref=e123]:
+            - text: Service Website
+            - heading "Local Service Booking Site" [level=3] [ref=e124]
+            - paragraph [ref=e125]: A local-service design for a dentist, bike repair shop, or salon where booking, trust cues, and contact details are impossible to miss.
+            - strong [ref=e126]: Booking-first information architecture
+      - article [ref=e127]:
+        - link "Open Trivia UP Memory Mode placeholder" [ref=e128] [cursor=pointer]:
+          - /url: "#/coming-soon/triviaup-memory-game"
+          - figure "Design 2" [ref=e129]:
+            - img "Trivia UP Memory Mode concept" [ref=e130]
+            - generic [ref=e131]: Design 2
+          - generic [ref=e132]:
+            - text: Memory Game
+            - heading "Trivia UP Memory Mode" [level=3] [ref=e133]
+            - paragraph [ref=e134]: A memory-game direction for Trivia UP with fast rounds, clear scoring, and feedback that feels playful without becoming visually loud.
+            - strong [ref=e135]: Game loop, feedback, and scoring states
+      - article [ref=e136]:
+        - link "Open E-Commerce Storefront placeholder" [ref=e137] [cursor=pointer]:
+          - /url: "#/coming-soon/ecommerce-site"
+          - figure "Design 3" [ref=e138]:
+            - img "E-Commerce Storefront concept" [ref=e139]
+            - generic [ref=e140]: Design 3
+          - generic [ref=e141]:
+            - text: E-Commerce
+            - heading "E-Commerce Storefront" [level=3] [ref=e142]
+            - paragraph [ref=e143]: A storefront concept focused on browse, filtering, product detail, and checkout decisions with friction reduced at every step.
+            - strong [ref=e144]: Catalog browsing and checkout clarity
+      - article [ref=e145]:
+        - link "Open Analytics + Visualization Site placeholder" [ref=e146] [cursor=pointer]:
+          - /url: "#/coming-soon/analytics-visualization"
+          - figure "Design 4" [ref=e147]:
+            - img "Analytics + Visualization Site concept" [ref=e148]
+            - generic [ref=e149]: Design 4
+          - generic [ref=e150]:
+            - text: Data Visualization
+            - heading "Analytics + Visualization Site" [level=3] [ref=e151]
+            - paragraph [ref=e152]: A BI, sports, or finance dashboard where dense data is organized into readable signals, confident hierarchy, and glanceable comparisons.
+            - strong [ref=e153]: Dashboard hierarchy and data storytelling
+  - generic [ref=e155]:
+    - paragraph [ref=e156]: Aditya Baindur / SEG3525 Portfolio
+    - link "d1.byaditya.com" [ref=e157] [cursor=pointer]:
+      - /url: https://d1.byaditya.com

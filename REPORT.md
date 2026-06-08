@@ -51,19 +51,19 @@ This starts the Vite dev server for the portfolio homepage.
 
 ### a) Colors
 
-I used a light monochrome palette: white backgrounds, black text, and gray separators. I intentionally avoided bright accent colors so the page feels clean and focused. Most of the emphasis comes from black borders, section dividers, and typographic contrast.
+I used a restrained luxury/editorial palette: warm alabaster for the page background, rich charcoal for text and structural lines, pale taupe for quiet surfaces, warm grey for secondary copy, and metallic gold as a very small accent. I avoided pure black and pure white so the page feels softer and more like printed editorial material. Gold is only used for emphasis, hover states, and italic headline moments so it stays special instead of becoming decorative noise.
 
 ### b) Typography
 
-I used Playfair Display for major headings and Source Serif 4 for body text. This gave the page a more editorial look while keeping long paragraphs readable. I used JetBrains Mono for smaller labels/buttons to separate utility text from content text.
+I used Playfair Display for large headings and editorial emphasis, paired with Inter for navigation, labels, and readable body text. The serif headings create a more refined magazine-like tone, while Inter keeps the actual information clear and accessible. I used large type for hierarchy, tiny uppercase labels with wide letter spacing for structure, and italic gold words inside headings to create a deliberate editorial rhythm.
 
 ### c) Layout (Scale, Hierarchy, Balance, Contrast)
 
-The layout is built around a strong vertical rhythm and clear section blocks:
+The layout is built like an editorial spread rather than a generic web template:
 
-- **Scale:** The hero title is intentionally oversized so the page purpose is obvious immediately.
-- **Visual hierarchy:** Section titles, body text, and small labels each have distinct size, weight, and spacing patterns.
-- **Balance:** A two-column structure in key sections balances dense explanatory text with open negative space.
-- **Contrast:** Contrast is created through black-on-white typography, heavy section lines, and bordered cards.
+- **Scale:** The hero headline and section titles are intentionally oversized, while metadata and labels are tiny and widely tracked. This creates the dramatic hierarchy expected from editorial design.
+- **Visual hierarchy:** Required sections are clearly labelled as About You, How You Work, and Future Case Studies. The page uses large serif headings, line dividers, and structured lists so the TA can scan requirements quickly.
+- **Balance:** The design uses asymmetry instead of centered blocks. Content is offset across a 12-column layout, with large negative space and staggered case-study images to create visual tension without clutter.
+- **Contrast:** Contrast comes from charcoal on alabaster, one inverted dark process section, grayscale images that reveal color on hover, and gold accents used only at important moments.
 
-Overall, I wanted the page to feel direct and readable first, while still looking like a personal portfolio and not a generic template.
+Overall, I wanted the portfolio to feel precise, quiet, and premium: more like a curated editorial profile than a standard developer landing page, while still meeting every assignment requirement.
