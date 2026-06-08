@@ -139,8 +139,9 @@ a:focus-visible {
 
 .logo-lockup img {
   display: block;
-  width: 100%;
+  width: 40%;
   height: auto;
+  padding-left: 5%;
   filter: grayscale(1);
 }
 

@@ -1,5 +1,13 @@
-import type { ReactNode } from 'react'
-import { HashRouter, Link, Navigate, Route, Routes, useParams } from 'react-router-dom'
+import { useEffect, type ReactNode } from 'react'
+import {
+  HashRouter,
+  Link,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from 'react-router-dom'
 import mainLogo from '../../images/MainlogoFull.png'
 
 type CaseStudy = {
@@ -177,6 +185,16 @@ const scrollToSection = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 const getCaseStudyPath = (study: CaseStudy) =>
   study.status === 'published' ? `/case-study/${study.id}` : `/coming-soon/${study.id}`
 
@@ -242,7 +260,7 @@ function HomePage() {
       <header className="hero-section" id="top">
         <nav className="editorial-container editorial-nav" aria-label="Portfolio sections">
           <Link className="logo-lockup" to="/" aria-label="Aditya Baindur portfolio home">
-            <img src={mainLogo} alt="Aditya Baindur logo" />
+            <img src={mainLogo} alt="Aditya Baindur logo"  className="h-3 w-3 object-contain"/>
           </Link>
           <div className="nav-links" aria-label="Jump to required portfolio sections">
             <button type="button" onClick={() => scrollToSection('about')}>
@@ -258,14 +276,9 @@ function HomePage() {
         </nav>
 
         <section className="editorial-container hero-layout" aria-labelledby="hero-title">
-          <div className="hero-kicker">
-            <div className="section-rule" aria-hidden="true" />
-            <p className="overline">SEG3525 Portfolio / Vol. 01</p>
-          </div>
-
           <div className="hero-title-block">
             <h1 id="hero-title">
-              Full-stack systems with <em>editorial</em> precision.
+              Full-stack systems on the <em>edge</em> 
             </h1>
             <p>
               I am Aditya Baindur, a fourth-year Computer Science student at uOttawa and a
@@ -297,7 +310,7 @@ function HomePage() {
       <section className="editorial-section about-section" id="about">
         <div className="editorial-container about-layout">
           <SectionHeader
-            eyebrow="01 / Required Section"
+            eyebrow="01 "
             title={
               <>
                 About <em>You</em>
@@ -311,8 +324,8 @@ function HomePage() {
               foundations, and product decisions that users can understand quickly.
             </p>
             <p>
-              Most of my project breakdowns, architecture notes, and implementation details live at
-              docs.adityabaindur.com. This portfolio is the shorter front door: who I am, how I
+              Most of my project breakdowns, architecture notes, and implementation details live at {' '}
+              <a href='https://docs.adityabaindur.com' >docs.adityabaindur.com</a>. This portfolio is the shorter front door: who I am, how I
               work, and where the SEG3525 case studies live as they move from placeholders to
               finished prototypes.
             </p>
@@ -340,7 +353,7 @@ function HomePage() {
       <section className="editorial-section dark-section" id="how-i-work">
         <div className="editorial-container process-layout">
           <SectionHeader
-            eyebrow="02 / Required Section"
+            eyebrow="02"
             title={
               <>
                 How <em>You</em> Work
@@ -390,7 +403,7 @@ function HomePage() {
       <section className="editorial-section case-section" id="case-studies">
         <div className="editorial-container case-layout">
           <SectionHeader
-            eyebrow="03 / Required Section"
+            eyebrow="03"
             title={
               <>
                 Case <em>Studies</em>
@@ -398,9 +411,7 @@ function HomePage() {
             }
           />
           <p className="case-intro">
-            The service website slot is now a published VéloVite case study linked to its
-            high-fidelity prototype. The remaining three slots stay as coming-soon placeholders for
-            future semester designs.
+            A curated list of case studies : 
           </p>
           <div className="case-grid">
             {caseStudies.map((study, index) => (
@@ -467,9 +478,7 @@ function PublishedCaseStudyPage() {
             {study.title} <em>Service Website</em>
           </h1>
           <p className="drop-cap">
-            {study.detail} The project connects this portfolio to a public high-fidelity prototype,
-            the mockups and storyboard materials, and the source repository so the TA can test the
-            interface without needing any additional coordination.
+            {study.detail}
           </p>
           <div className="case-study-actions">
             {study.prototypeUrl && <EditorialButton href={study.prototypeUrl}>Open prototype</EditorialButton>}
@@ -487,7 +496,6 @@ function PublishedCaseStudyPage() {
         </section>
 
         <figure className="case-study-visual">
-          <span className="vertical-label">High-Fidelity Prototype</span>
           <img src={study.image} alt={`${study.title} bike repair website concept`} />
           <figcaption>
             <span>{study.domain}</span>
@@ -613,6 +621,7 @@ function App() {
   return (
     <HashRouter>
       <div className="app-shell">
+        <ScrollToTop />
         <EditorialChrome />
         <Routes>
           <Route path="/" element={<HomePage />} />
