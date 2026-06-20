@@ -21,6 +21,13 @@ type CaseStudy = {
   prototypeUrl?: string
   mockupsUrl?: string
   repoUrl?: string
+  documentationUrl?: string
+  assignmentLabel?: string
+  heroEmphasis?: string
+  personasHeading?: string
+  personasEmphasis?: string
+  designHeading?: string
+  designEmphasis?: string
   personas?: Persona[]
   visualDesign?: string[]
 }
@@ -62,6 +69,12 @@ const caseStudies: CaseStudy[] = [
     prototypeUrl: 'https://d2.byaditya.com',
     mockupsUrl: 'https://d2.byaditya.com/mockups',
     repoUrl: 'https://github.com/ABUO023/SEG_3525-Devoir_2',
+    assignmentLabel: 'Devoir 2',
+    heroEmphasis: 'Service Website',
+    personasHeading: 'Designed for',
+    personasEmphasis: 'two riders',
+    designHeading: 'Industrial',
+    designEmphasis: 'Clean',
     personas: [
       {
         name: 'Nahar',
@@ -90,14 +103,50 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'triviaup-memory-game',
-    title: 'Trivia UP Memory Mode',
-    domain: 'Memory Game',
+    title: 'Trivia UP',
+    domain: 'Trivia Memory Game',
     image:
       'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A memory-game direction for Trivia UP with fast rounds, clear scoring, and feedback that feels playful without becoming visually loud.',
-    outcome: 'Game loop, feedback, and scoring states',
-    status: 'coming-soon',
+      'A clean trivia game that pulls questions from OpenTDB, adds a Next.js proxy layer for tracking previously served games, and keeps quick rounds readable across light and dark modes.',
+    outcome: 'Live prototype, mockups, personas, scoring flow, and source code',
+    status: 'published',
+    prototypeUrl: 'https://triviaup.adityabaindur.com/',
+    mockupsUrl: 'https://triviaup.adityabaindur.com/mockups',
+    repoUrl: 'https://github.com/Aditya-Baindur/TriviaUP',
+    documentationUrl: 'https://docs.adityabaindur.dev/docs/TriviaUP',
+    assignmentLabel: 'Devoir 3',
+    heroEmphasis: 'Memory Game',
+    personasHeading: 'Designed for',
+    personasEmphasis: 'quick play',
+    designHeading: 'Clean',
+    designEmphasis: 'Game Flow',
+    personas: [
+      {
+        name: 'Paul',
+        characteristics: 'Student on a tight budget who wants a distraction during boring lectures.',
+        technology: 'Mobile-first and uses social media recommendations to decide what is worth trying.',
+        domainRelationship:
+          'Looks for a simple, no-fee game that feels polished, entertaining, and lightly challenging.',
+        goal:
+          'Play on the go, on the metro, with friends, or alone while expanding his general knowledge.',
+      },
+      {
+        name: 'Eric',
+        characteristics:
+          'Retired professional who likes memory and trivia games to keep his skills sharp as he gets older.',
+        technology: 'Beginner user who knows how to open a browser and navigate basic web pages.',
+        domainRelationship:
+          'Knowledgeable in trivia and enjoys playing alone, with his wife, and with his grandkids.',
+        goal: 'Use a simple game that is easy to play with family during game nights.',
+      },
+    ],
+    visualDesign: [
+      'A Next.js backend proxy wraps OpenTDB so repeated games can be tracked with a lightweight cookie layer.',
+      'The centered card layout keeps each question and answer group visually separate, especially on phones.',
+      'Neutral surfaces, black typography, and a red primary accent make active answers and controls easy to find.',
+      'Light and dark mode support keeps quick rounds readable without making the interface visually loud.',
+    ],
   },
   {
     id: 'ecommerce-site',
@@ -473,9 +522,9 @@ function PublishedCaseStudyPage() {
 
         <section className="case-study-hero">
           <div className="section-rule" aria-hidden="true" />
-          <p className="overline">Published Case Study / Devoir 2</p>
+          <p className="overline">Published Case Study / {study.assignmentLabel ?? 'Devoir'}</p>
           <h1>
-            {study.title} <em>Service Website</em>
+            {study.title} <em>{study.heroEmphasis ?? study.domain}</em>
           </h1>
           <p className="drop-cap">
             {study.detail}
@@ -492,11 +541,16 @@ function PublishedCaseStudyPage() {
                 Source code
               </EditorialButton>
             )}
+            {study.documentationUrl && (
+              <EditorialButton variant="secondary" href={study.documentationUrl}>
+                Documentation
+              </EditorialButton>
+            )}
           </div>
         </section>
 
         <figure className="case-study-visual">
-          <img src={study.image} alt={`${study.title} bike repair website concept`} />
+          <img src={study.image} alt={`${study.title} ${study.domain} concept`} />
           <figcaption>
             <span>{study.domain}</span>
             <strong>{study.outcome}</strong>
@@ -510,7 +564,7 @@ function PublishedCaseStudyPage() {
             eyebrow="Personas"
             title={
               <>
-                Designed for <em>two riders</em>
+                {study.personasHeading ?? 'Designed for'} <em>{study.personasEmphasis ?? 'users'}</em>
               </>
             }
           />
@@ -548,7 +602,7 @@ function PublishedCaseStudyPage() {
             eyebrow="Design Direction"
             title={
               <>
-                Industrial <em>Clean</em>
+                {study.designHeading ?? 'Design'} <em>{study.designEmphasis ?? 'Direction'}</em>
               </>
             }
           />

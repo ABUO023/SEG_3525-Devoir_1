@@ -1,0 +1,84 @@
+- main [ref=e4]:
+  - generic [ref=e5]:
+    - link "Portfolio home" [ref=e6] [cursor=pointer]:
+      - /url: "#/"
+    - generic [ref=e7]:
+      - paragraph [ref=e9]: Published Case Study / Devoir 3
+      - heading "Trivia UP Memory Game" [level=1] [ref=e10]:
+        - text: Trivia UP
+        - emphasis [ref=e11]: Memory Game
+      - paragraph [ref=e12]: A clean trivia game that pulls questions from OpenTDB, adds a Next.js proxy layer for tracking previously served games, and keeps quick rounds readable across light and dark modes.
+      - generic [ref=e13]:
+        - link "Open prototype" [ref=e14] [cursor=pointer]:
+          - /url: https://triviaup.adityabaindur.com/
+          - generic [ref=e16]: Open prototype
+        - link "View mockups" [ref=e17] [cursor=pointer]:
+          - /url: https://triviaup.adityabaindur.com/mockups
+          - generic [ref=e19]: View mockups
+        - link "Source code" [ref=e20] [cursor=pointer]:
+          - /url: https://github.com/Aditya-Baindur/TriviaUP
+          - generic [ref=e22]: Source code
+        - link "Documentation" [ref=e23] [cursor=pointer]:
+          - /url: https://docs.adityabaindur.dev/docs/TriviaUP
+          - generic [ref=e25]: Documentation
+    - figure "Trivia Memory Game Live prototype, mockups, personas, scoring flow, and source code" [ref=e26]:
+      - img "Trivia UP Trivia Memory Game concept" [ref=e27]
+      - generic [ref=e28]:
+        - text: Trivia Memory Game
+        - strong [ref=e29]: Live prototype, mockups, personas, scoring flow, and source code
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - paragraph [ref=e34]: Personas
+      - heading "Designed for quick play" [level=2] [ref=e35]:
+        - text: Designed for
+        - emphasis [ref=e36]: quick play
+    - generic [ref=e37]:
+      - article [ref=e38]:
+        - heading "Paul" [level=2] [ref=e39]
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - term [ref=e42]: Characteristics
+            - definition [ref=e43]: Student on a tight budget who wants a distraction during boring lectures.
+          - generic [ref=e44]:
+            - term [ref=e45]: Technology
+            - definition [ref=e46]: Mobile-first and uses social media recommendations to decide what is worth trying.
+          - generic [ref=e47]:
+            - term [ref=e48]: Domain Relationship
+            - definition [ref=e49]: Looks for a simple, no-fee game that feels polished, entertaining, and lightly challenging.
+          - generic [ref=e50]:
+            - term [ref=e51]: Goal
+            - definition [ref=e52]: Play on the go, on the metro, with friends, or alone while expanding his general knowledge.
+      - article [ref=e53]:
+        - heading "Eric" [level=2] [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - term [ref=e57]: Characteristics
+            - definition [ref=e58]: Retired professional who likes memory and trivia games to keep his skills sharp as he gets older.
+          - generic [ref=e59]:
+            - term [ref=e60]: Technology
+            - definition [ref=e61]: Beginner user who knows how to open a browser and navigate basic web pages.
+          - generic [ref=e62]:
+            - term [ref=e63]: Domain Relationship
+            - definition [ref=e64]: Knowledgeable in trivia and enjoys playing alone, with his wife, and with his grandkids.
+          - generic [ref=e65]:
+            - term [ref=e66]: Goal
+            - definition [ref=e67]: Use a simple game that is easy to play with family during game nights.
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - paragraph [ref=e72]: Design Direction
+      - heading "Clean Game Flow" [level=2] [ref=e73]:
+        - text: Clean
+        - emphasis [ref=e74]: Game Flow
+    - generic [ref=e75]:
+      - article [ref=e76]:
+        - text: "01"
+        - paragraph [ref=e77]: A Next.js backend proxy wraps OpenTDB so repeated games can be tracked with a lightweight cookie layer.
+      - article [ref=e78]:
+        - text: "02"
+        - paragraph [ref=e79]: The centered card layout keeps each question and answer group visually separate, especially on phones.
+      - article [ref=e80]:
+        - text: "03"
+        - paragraph [ref=e81]: Neutral surfaces, black typography, and a red primary accent make active answers and controls easy to find.
+      - article [ref=e82]:
+        - text: "04"
+        - paragraph [ref=e83]: Light and dark mode support keeps quick rounds readable without making the interface visually loud.
