@@ -150,14 +150,52 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'ecommerce-site',
-    title: 'E-Commerce Storefront',
-    domain: 'E-Commerce',
+    title: 'DormDash',
+    domain: 'Student Move-In E-Commerce',
     image:
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A storefront concept focused on browse, filtering, product detail, and checkout decisions with friction reduced at every step.',
-    outcome: 'Catalog browsing and checkout clarity',
-    status: 'coming-soon',
+      'A high-fidelity e-commerce prototype for Canadian university students preparing for move-in day, built around curated dorm essentials, faceted search, guided checkout, and post-purchase feedback.',
+    outcome: 'Live prototype, faceted discovery, checkout flow, survey, and source code',
+    status: 'published',
+    prototypeUrl: 'https://d4-seg.byaditya.com/',
+    repoUrl: 'https://github.com/ABUO023/D3-SEG3525',
+    assignmentLabel: 'Devoir 4',
+    heroEmphasis: 'E-Commerce',
+    personasHeading: 'Designed for',
+    personasEmphasis: 'move-in',
+    designHeading: 'Commerce',
+    designEmphasis: 'Flow',
+    personas: [
+      {
+        name: 'Residence Student',
+        characteristics:
+          'University student preparing for residence move-in with a limited budget and a long list of essentials to organize.',
+        technology:
+          'Comfortable shopping on mobile and desktop, using search, filters, carts, and familiar checkout patterns.',
+        domainRelationship:
+          'Needs bedding, desk, bathroom, laundry, cleaning, snack, and decor products without visiting multiple stores.',
+        goal:
+          'Compare curated bundles by category, price, room type, style, and delivery speed before ordering quickly.',
+      },
+      {
+        name: 'Apartment Student',
+        characteristics:
+          'Student moving into a shared apartment or studio who wants practical products that match budget and delivery constraints.',
+        technology:
+          'Uses direct search when they know what they need and faceted filters when they are still exploring options.',
+        domainRelationship:
+          'Buys move-in products seasonally and depends on clear product details, delivery timing, and cart control.',
+        goal:
+          'Build a reliable move-in cart, review fake payment details safely, and leave feedback after confirmation.',
+      },
+    ],
+    visualDesign: [
+      'Faceted filters support exploration by category, price, room type, delivery speed, popularity, and style.',
+      'A four-step checkout indicator shows Cart, Student Details, Payment, and Confirmation so users always know their progress.',
+      'Rounded product cards, badges, and clear grouping make bundles, delivery value, and product descriptions easy to scan.',
+      'The post-purchase survey appears after confirmation, keeping shopping uninterrupted while still collecting useful feedback.',
+    ],
   },
   {
     id: 'analytics-visualization',
