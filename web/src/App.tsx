@@ -199,14 +199,53 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'analytics-visualization',
-    title: 'Analytics + Visualization Site',
-    domain: 'Data Visualization',
+    title: 'PITWALL',
+    domain: 'F1 Race Pace Dashboard',
     image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80',
+      'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1400&q=80',
     detail:
-      'A BI, sports, or finance dashboard where dense data is organized into readable signals, confident hierarchy, and glanceable comparisons.',
-    outcome: 'Dashboard hierarchy and data storytelling',
-    status: 'coming-soon',
+      'A bilingual Formula 1 race-pace dashboard that helps fans compare driver performance across four 2025 Grands Prix using OpenF1 data, interactive charts, localized copy, and motorsport-inspired timing visuals.',
+    outcome: 'Live prototype, bilingual dashboard, OpenF1 data, Recharts visualizations, and source code',
+    status: 'published',
+    prototypeUrl: 'https://seg-3525-devoir-5.vercel.app',
+    mockupsUrl: 'https://seg-3525-devoir-5.vercel.app/figma',
+    repoUrl: 'https://github.com/ABUO023/SEG_3525-Devoir_5',
+    assignmentLabel: 'Devoir 5',
+    heroEmphasis: 'Dashboard',
+    personasHeading: 'Designed for',
+    personasEmphasis: 'race pace',
+    designHeading: 'Bilingual',
+    designEmphasis: 'Analysis',
+    personas: [
+      {
+        name: 'Race Fan',
+        characteristics:
+          'Formula 1 fan who wants a faster way to understand race pace without reading dense timing sheets.',
+        technology:
+          'Comfortable with interactive dashboards, hover states, metric toggles, and mobile race coverage.',
+        domainRelationship:
+          'Understands drivers, teams, circuits, and lap-time comparisons but needs the data translated into clear patterns.',
+        goal:
+          'Select a Grand Prix and driver, inspect pace development, and compare fastest lap, average lap, or top speed against the field.',
+      },
+      {
+        name: 'Bilingual Data Reader',
+        characteristics:
+          'English or French viewer who needs localized labels, explanations, chart text, and accessible summaries.',
+        technology:
+          'Uses desktop or mobile layouts and benefits from visible controls, ARIA support, and reduced-motion handling.',
+        domainRelationship:
+          'Looks at race data as a story: what changed over the race, who was fastest, and how the selected driver ranks.',
+        goal:
+          'Switch language at any time while keeping units, numbers, dates, tooltips, and chart context understandable.',
+      },
+    ],
+    visualDesign: [
+      'A line chart shows one driver’s lap-time development over the race, making stint changes and faster laps easier to read.',
+      'A horizontal bar chart compares eight drivers by fastest lap, average lap, or top speed while preserving readable driver acronyms.',
+      'The 3Cs shape the interface: context through titles and summary cards, clutter reduction through one pace line, and contrast through charcoal, white, racing red, and team colours.',
+      'Canadian English and Canadian French localization covers the title, controls, chart labels, tooltips, help text, sources, accessible text, and footer.',
+    ],
   },
 ]
 
